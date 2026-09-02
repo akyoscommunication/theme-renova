@@ -1,9 +1,9 @@
 {
-  "name": "akyos/theme-access-renova-immobilier",
+  "name": "akyos/theme-renova",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "Thème parent Access access-renova-immobilier (Sage / Acorn / Vite)",
-  "homepage": "https://github.com/akyoscommunication/theme-access-renova-immobilier",
+  "description": "Thème parent Access Renova (Sage / Acorn / Vite)",
+  "homepage": "https://github.com/akyoscommunication/theme-renova",
   "authors": [
     {
       "name": "Akyos Communication",
@@ -19,8 +19,8 @@
     "access"
   ],
   "support": {
-    "issues": "https://github.com/akyoscommunication/theme-access-renova-immobilier/issues",
-    "source": "https://github.com/akyoscommunication/theme-access-renova-immobilier"
+    "issues": "https://github.com/akyoscommunication/theme-renova/issues",
+    "source": "https://github.com/akyoscommunication/theme-renova"
   },
   "autoload": {
     "psr-4": {
