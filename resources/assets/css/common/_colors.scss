@@ -1,0 +1,55 @@
+@use "sass:map";
+
+$prefix-color: '--aky-color-';
+
+:root {
+  --aky-color-dark: #232323;
+  --aky-color-light: #fafafa;
+  --aky-color-grey: #F5F5F5;
+  --aky-color-dark--rgb: 35, 35, 35;
+  --aky-color-light--rgb: 250, 250, 250;
+}
+
+$colors-scheme-light: (
+  primary: color(primary),
+  secondary: color(secondary),
+  background_body : color(background_body),
+  text-primary: color(text_bg_color_primary),
+  text-secondary: color(text_bg_color_secondary),
+  text-background_body: color(text_bg_color_background_body),
+  dark: color(dark),
+  light: color(light),
+  c-grey: color(grey),
+);
+
+@each $name, $color in $colors-scheme-light {
+  @if not (str-index($name, '--rgb')) {
+    .color-#{$name} {
+      color: color(#{$name}) !important;
+    }
+
+    .bg-color-#{$name} {
+      background: color(#{$name}) !important;
+    }
+
+    .border-color-#{$name} {
+      border-color: color(#{$name}) !important;
+    }
+  }
+}
+
+.bg-color-primary {
+  color: color(text-primary) !important;
+
+  .btn {
+    color: color(text-primary) !important;
+
+    img {
+      filter: invert(100%);
+    }
+  }
+}
+
+.bg-color-secondary {
+  color: color(text-secondary) !important;
+}

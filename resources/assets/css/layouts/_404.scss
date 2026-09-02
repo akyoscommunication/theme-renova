@@ -1,0 +1,10 @@
+.page-not-found {
+  @include flex(column, nowrap, center, center);
+  height: 80vh;
+  text-align: center;
+
+
+  .btn {
+    margin-top: rem(64);
+  }
+}

@@ -1,0 +1,39 @@
+.s-hero {
+  padding-top: clamp-calc(100px, 176px);
+
+  &-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: rem(32);
+    min-height: rem(180);
+
+    @include lessThan(laptop) {
+      display: flex;
+      flex-flow: wrap;
+    }
+
+    .date {
+      margin-bottom: rem(20);
+      color: #8B8B8B;
+    }
+
+    &-content {
+      &__text {
+        line-height: 1.1;
+      }
+
+      .btn {
+        margin-top: rem(24);
+      }
+    }
+  }
+
+  .c-image {
+    margin-top: rem(46);
+    height: clamp-calc(400px, 465px);
+
+    img {
+      animation: zoom-out 1.8s $cubic-transition;
+    }
+  }
+}

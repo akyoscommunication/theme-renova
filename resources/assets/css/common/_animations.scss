@@ -1,0 +1,90 @@
+[animation-mask] {
+  mask-image: linear-gradient(90deg, #fff 33.33%, transparent 66.66%);
+  mask-size: 0 100%;
+  mask-repeat: no-repeat;
+  display: inline-block;
+}
+
+.animation-mask {
+  &--active {
+    mask-size: 300% 100%;
+  }
+}
+
+
+[animation-wipe] {
+  @extend .animation-wipe;
+}
+
+.animation-wipe {
+  mask-image: linear-gradient(0deg, #fff 100%, transparent 100%);
+  mask-size: 300% 0;
+  mask-repeat: no-repeat;
+  mask-position: top;
+  transition-delay: 0.2s;
+  transition-duration: 2s;
+  transition-timing-function: $cubic-transition;
+  transition-property: mask-size;
+
+  &--active {
+    mask-size: 300% 100%;
+  }
+}
+
+
+@keyframes zoom-out {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+[animation-background] {
+  transition: background-color 0.5s linear;
+}
+
+[animation-overflow] {
+  br {
+    display: none;
+  }
+
+  .c-title__item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    span {
+      position: relative;
+      display: block;
+      bottom: -100px;
+      transition: bottom 1s $cubic-transition;
+    }
+
+    //augmente la vitesse de transition pour chaque élément en fonction du nombre de lignes
+    $items: 1 2 3 4 5 6 7 8 9 10;
+
+    @each $item in $items {
+      &:nth-child(#{$item}) {
+        span {
+          transition-delay: 0.1s * $item;
+        }
+      }
+    }
+  }
+}
+
+.animation-overflow {
+  &--active {
+    .c-title__item {
+      span {
+        bottom: 0;
+
+      }
+    }
+  }
+}
+

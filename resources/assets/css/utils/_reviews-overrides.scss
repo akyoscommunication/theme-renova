@@ -1,0 +1,80 @@
+.s-reviews {
+  > .container {
+    padding-block: rem(40);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: rem(15);
+      right: rem(15);
+      height: rem(1);
+      background: color(dark);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-top: rem(11);
+    max-width: 50%;
+
+    @include lessThan(tablet) {
+      max-width: none;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &-list {
+    margin-top: rem(64);
+
+    .slider--reviews {
+      overflow-x: clip !important;
+      overflow-y: initial !important;
+
+      .swiper-buttons {
+        position: absolute;
+        top: rem(-110);
+        right: 0;
+        margin-top: 0;
+
+        @include lessThan(tablet) {
+          top: rem(-50);
+        }
+
+        svg path {
+          stroke: color(text-background_body) !important;
+        }
+      }
+    }
+  }
+
+  &-item {
+    background-color: transparent;
+    color: color(dark);
+    padding: rem(16) rem(8);
+    gap: rem(20);
+
+    &__author {
+      @extend %fs-26;
+
+      font-weight: 400;
+      font-family: $font-family;
+    }
+
+    &__avatar img {
+      width: rem(88);
+      height: rem(88);
+    }
+  }
+}

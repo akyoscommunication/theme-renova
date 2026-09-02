@@ -1,0 +1,62 @@
+.c-pagination {
+
+  padding-top: rem(50);
+  padding-bottom: rem(18);
+
+  .screen-reader-text {
+    display: none;
+  }
+
+  .nav-links {
+    @include flex(row, nowrap, center, center);
+
+    gap: rem(8);
+
+    .prev, .next {
+      color: transparent;
+      position: relative;
+
+      &:before {
+        content: url($assets-path + '/icons/arrow-next.svg');
+        position: absolute;
+        top: rem(2);
+        left: rem(8);
+        width: rem(14);
+        height: rem(14);
+        transition: all 0.3s $cubic-transition;
+      }
+    }
+
+    .prev {
+      margin-right: rem(24);
+
+      &:before {
+        content: url($assets-path + '/icons/arrow-prev.svg');
+        right: rem(8);
+        left: auto;
+      }
+    }
+
+    .next {
+      margin-left: rem(24);
+    }
+
+    .page-numbers:not(.prev, .next) {
+      @include flex(row, nowrap, center, center);
+
+      width: rem(32);
+      height: rem(32);
+      color: #8B8B8B;
+      transition: all 0.3s $cubic-transition;
+
+      &.current {
+        color: color(secondary);
+      }
+
+      &:not(.current, .prev, .next):hover {
+        background-color: color(secondary);
+        color: color(text-secondary);
+      }
+    }
+  }
+}

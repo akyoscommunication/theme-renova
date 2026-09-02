@@ -1,0 +1,94 @@
+.s-text-image {
+  &__text {
+    max-width: rem(941);
+  }
+
+  > .container {
+    > .c-title {
+      width: fit-content;
+    }
+
+    &.reverse {
+      text-align: right;
+
+      .s-text-image {
+        &__text {
+          margin-left: auto;
+        }
+
+        &-wrapper {
+          grid-template-columns: 7fr 3fr 2fr;
+          grid-template-areas: "slider blank bouton";
+
+          @include lessThan(laptop) {
+            grid-template-columns: 1fr;
+            grid-template-areas: "slider" "bouton";
+          }
+
+          .btn {
+            margin-left: auto;
+          }
+
+          .swiper-buttons {
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 3fr 7fr;
+    grid-template-areas: "bouton blank slider";
+    grid-gap: rem(20);
+    margin-top: rem(92);
+
+    @include lessThan(laptop) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "bouton" "slider";
+    }
+
+    .swiper {
+      padding-bottom: rem(53);
+    }
+
+    .btn {
+      grid-area: bouton;
+      height: fit-content;
+
+      &-title__item {
+        text-transform: initial;
+        font-weight: 400;
+      }
+    }
+
+    .swiper {
+      grid-area: slider;
+      max-width: 100%;
+
+      &-slide {
+        height: clamp-calc(350px, 528px);
+
+        .c-image {
+          height: clamp-calc(350px, 528px);
+          width: 100%;
+        }
+      }
+
+      &-buttons {
+        position: absolute;
+        margin-top: rem(17) !important;
+        right: 0;
+        bottom: 0;
+
+        svg {
+          path {
+            stroke: color(text-background_body) !important;
+          }
+        }
+      }
+    }
+  }
+}

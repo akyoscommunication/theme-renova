@@ -1,0 +1,8 @@
+.c-filter {
+  &-buttons {
+    @include flex(row, wrap, start, center);
+
+    column-gap: rem(45);
+    row-gap: rem(32);
+  }
+}

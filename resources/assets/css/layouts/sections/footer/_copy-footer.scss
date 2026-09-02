@@ -1,0 +1,75 @@
+.copy-footer {
+  background-color: color(primary);
+  color: color(text-primary);
+  padding-bottom: rem(23);
+
+  a {
+    background-position: 100% 100%;
+    background-size: 0 rem(2);
+    background-image: linear-gradient(color(text-primary), color(text-primary));
+    background-repeat: no-repeat;
+    transition: background-size 0.3s $cubic-transition;
+
+    &:hover {
+      background-position: 0 100%;
+      background-size: 100% rem(2);
+    }
+  }
+
+  > .container {
+    @include flex(row, wrap, space-between, center);
+
+    @include lessThan(tablet) {
+      flex-direction: column;
+    }
+
+    .menu {
+      @include flex(row, wrap, space-between, center);
+      @include undoListStyles;
+
+      gap: rem(0);
+
+      @include lessThan($tablet) {
+        justify-content: center;
+        gap: 0;
+        column-gap: rem(10);
+
+        li {
+          position: relative;
+        }
+      }
+
+      @include lessThan($mobile) {
+        flex-direction: column;
+        margin-bottom: rem(20);
+        li {
+          &:after {
+            content: none !important;
+          }
+        }
+      }
+
+      li {
+        @include flex(row, nowrap, center, center);
+
+        &:after {
+          content: "";
+          display: block;
+          width: rem(1);
+          height: rem(10);
+          background-color: color(text-primary);
+          margin: 0 rem(8);
+        }
+
+        &:last-child:after {
+          content: none;
+        }
+
+        a {
+          font-weight: 400;
+        }
+      }
+    }
+
+  }
+}

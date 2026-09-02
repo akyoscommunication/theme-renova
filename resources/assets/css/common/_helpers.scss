@@ -1,0 +1,22 @@
+*[hidden] {
+  display: none !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text {
+  &-center {
+    text-align: center !important;
+  }
+}
+
+.link {
+  @extend %link;
+}
+
+.alignfull {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}

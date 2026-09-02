@@ -1,0 +1,77 @@
+.s-gallery {
+  > .container {
+    > .c-title {
+      width: fit-content;
+      margin-top: rem(32);
+    }
+  }
+
+  &__text {
+    @extend %fs-20;
+
+    font-family: $font-family-title;
+    margin-top: rem(8);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .swiper {
+    &-buttons {
+      position: absolute;
+      bottom: rem(42);
+      left: rem(44);
+      right: rem(44);
+      justify-content: space-between !important;
+
+      svg {
+        width: rem(50);
+        height: rem(50);
+
+        path {
+          stroke: color(background_body) !important;
+        }
+      }
+    }
+
+    &-slide {
+      height: clamp-calc(450px, 671px);
+
+
+      .c-image {
+        position: relative;
+        height: clamp-calc(450px, 671px);
+        cursor: pointer;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          transform: scale(1.001);
+          transition: transform 0.6s $cubic-transition;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          transition: background .7s $cubic-transition;
+        }
+
+        &:hover {
+          &:after {
+            background: rgba(0, 0, 0, 0.4);
+          }
+
+          img {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}

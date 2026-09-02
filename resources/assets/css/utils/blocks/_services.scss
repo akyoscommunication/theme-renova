@@ -1,0 +1,73 @@
+.s-services {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &__text {
+    @extend %fs-20;
+
+    font-family: $font-family-title;
+  }
+
+  > .container {
+    position: relative;
+
+    > .c-title {
+      width: fit-content;
+    }
+
+    .swiper {
+      overflow: initial !important;
+      margin-left: rem(109);
+
+      @include lessThan(tablet) {
+        margin-left: 0;
+      }
+
+      @include lessThan(laptop) {
+        overflow: hidden !important;
+
+      }
+
+      &-buttons {
+        position: absolute;
+        top: rem(-80);
+        right: 0;
+        margin-top: 0;
+
+        @include lessThan(tablet) {
+          position: initial;
+        }
+      }
+    }
+
+    .s-services {
+      &-list {
+        position: relative;
+        z-index: 1;
+        margin-top: rem(48);
+
+        &-wrapper {
+          @include flex(row, nowrap, center, center);
+
+          margin-top: rem(48);
+          grid-gap: rem(24);
+
+          @include lessThan($mobile) {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    .btn {
+      margin-top: rem(48);
+
+      &--absolute {
+        position: absolute;
+        bottom: rem(-20);
+        z-index: 1;
+      }
+    }
+  }
+}

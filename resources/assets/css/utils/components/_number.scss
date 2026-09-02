@@ -1,0 +1,33 @@
+.c-number {
+  @include flex(column, nowrap, center, center);
+
+  gap: rem(28);
+  padding: rem(16);
+  text-align: center;
+  border-radius: rem(25);
+
+  &-wrapper {
+    @include flex(row, nowrap, center, center);
+
+    gap: rem(16);
+  }
+
+  &__text {
+    p {
+      text-align: left;
+
+      @include lessThan($mobile) {
+        text-align: center !important;
+      }
+    }
+  }
+
+  &__title {
+    @extend %fs-58;
+
+    font-weight: 400;
+    font-family: $font-family-title;
+    line-height: 1.4;
+    letter-spacing: 3.48px;
+  }
+}

@@ -1,0 +1,121 @@
+.btn {
+  @include flex(row-reverse, nowrap, center, center);
+
+  gap: rem(8);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: color(text-background_body);
+  border-bottom: rem(2) solid color(primary);
+  overflow: hidden;
+  width: fit-content;
+  font-family: $font-family-title;
+
+  .c-image {
+    height: rem(11);
+    width: rem(11);
+    margin-top: rem(2);
+    margin-right: rem(2);
+    transition: transform 0.7s $cubic-transition;
+  }
+
+
+  &-title {
+    position: relative;
+
+    &__item {
+      transition: 0.7s $cubic-transition;
+
+      &:nth-child(2) {
+        position: absolute;
+        bottom: rem(-30);
+      }
+    }
+  }
+
+  &:hover {
+    .c-image {
+      transform: rotate(45deg);
+    }
+
+    .btn-title {
+      &__item {
+        transform: translateY(rem(-30));
+
+        &:nth-child(1) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &--category {
+    @extend %fs-13;
+    background: color(background_body);
+    border-bottom: none;
+    padding: rem(6);
+    border-radius: rem(8);
+    font-family: $font-family;
+    font-weight: 400;
+    text-transform: initial;
+    transition: 0.4s $cubic-transition;
+
+    &:hover {
+      background: color(secondary);
+      color: color(text-secondary);
+    }
+  }
+
+  &--secondary {
+    border-bottom: rem(2) solid color(secondary);
+  }
+
+  &--light {
+    color: color(text-primary);
+    border-bottom: rem(2) solid color(secondary);
+
+    .c-image {
+      filter: invert(1);
+    }
+  }
+
+  &--filter {
+    @extend %fs-20;
+
+    border-bottom: none;
+    font-weight: 400;
+    text-transform: initial;
+    position: relative;
+    overflow: initial;
+    color: #8B8B8B;
+
+    span {
+      span {
+        @extend %fs-13;
+
+        position: absolute;
+        right: rem(-16);
+        top: 0;
+        font-family: $font-family;
+      }
+    }
+
+    &:hover, &.btn--active {
+      color: color(text-brackground_body);
+    }
+  }
+
+  &--social {
+    width: rem(34);
+    height: rem(34);
+    border-bottom: none;
+    transition: 0.3s $cubic-transition !important;
+
+    .btn-title {
+      &__item {
+        svg {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

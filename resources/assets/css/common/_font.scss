@@ -1,0 +1,181 @@
+:root {
+  font-size: $html-font-size;
+  font-family: $font-family;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-Light.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-Italic.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-Medium.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-MediumItalic.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-Roman.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-LightItalic.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url($assets-path + '/fonts/Helvetica/HelveticaNeue-Bold.woff2') format('woff2'),
+  url($assets-path + '/fonts/Helvetica/HelveticaNeue-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+//--------PP NeueMontreal--------//
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Bold.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Book.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Book.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-BookItalic.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-BookItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Italic.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Light.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Medium.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Regular.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP NeueMontreal';
+  src: url($assets-path + '/fonts/PP/PPNeueMontreal-Thin.woff2') format('woff2'),
+  url($assets-path + '/fonts/PP/PPNeueMontreal-Thin.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+//--------PP NeueMontreal--------//
+
+
+%fs {
+  &-79 {
+    font-size: clamp-calc(58px, 79px);
+    line-height: clamp-calc(69px, 90);
+
+  }
+
+  &-58 {
+    font-size: clamp-calc(35px, 58px);
+    line-height: clamp-calc(41px, 69px);
+  }
+
+  &-33 {
+    font-size: clamp-calc(24px, 33px);
+    line-height: clamp-calc(32px, 41px);
+  }
+
+  &-26 {
+    font-size: clamp-calc(20px, 26px);
+    line-height: clamp-calc(26px, 32px);
+  }
+
+  &-20 {
+    font-size: clamp-calc(18px, 20px);
+  }
+
+  &-16 {
+    font-size: rem(16);
+    line-height: normal;
+    font-weight: 400;
+  }
+
+  &-13 {
+    font-size: rem(13);
+  }
+}

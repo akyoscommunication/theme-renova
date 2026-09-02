@@ -1,0 +1,51 @@
+{
+  "name": "Akyos-sage",
+  "private": true,
+  "browserslist": [
+    "extends @roots/browserslist-config/current"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "dev": "vite -m development",
+    "dev-debug": "vite -m development -d",
+    "build": "vite build",
+    "lint:js": "eslint --ext .js,.ts .",
+    "lint:css": "stylelint **/*.{scss,css}",
+    "lint": "yarn lint:js && yarn lint:css",
+    "translate": "yarn translate:pot && yarn translate:js",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --ignore-domain --include=\"app,resources\"",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print"
+  },
+  "devDependencies": {
+    "@roots/sage": "6.9.0",
+    "maildev": "^2.1.0",
+    "postscss": "^2.0.0",
+    "prettier": "^2.5.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-output-manifest": "^2.0.0",
+    "sass": "^1.54.9",
+    "sass-loader": "^13.3.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-recommended-scss": "^7.0.0",
+    "stylelint-config-standard": "^28.0.0",
+    "typescript": "^4.5.5",
+    "vite": "^4.0.0",
+    "vite-plugin-clean": "^1.0.0",
+    "vite-plugin-mkcert": "^1.10.1",
+    "vite-plugin-sass-glob-import": "^2.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "aos": "*",
+    "countup.js": "^2.8.0",
+    "glightbox": "^3.3.0",
+    "gsap": "*",
+    "laravel-vite-plugin": "^0.7.5",
+    "lenis": "^1.1.17",
+    "simplelightbox": "^2.14.3",
+    "swiper": "*",
+    "vite-plugin-sass": "^0.1.0"
+  }
+}

@@ -1,0 +1,63 @@
+.s-text-image-inline {
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 5fr 1fr 6fr;
+    grid-template-areas: "text blank images";
+
+    @include lessThan(laptop) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "text" "images";
+      gap: rem(32);
+    }
+
+    &.reverse {
+      grid-template-columns: 6fr 1fr 5fr;
+      grid-template-areas: "images blank text";
+
+      @include lessThan(laptop) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "text" "images";
+      }
+    }
+
+    &--text {
+      grid-area: text;
+      margin: auto;
+
+      .c-title {
+        margin-bottom: rem(48);
+        width: fit-content;
+      }
+
+      .btn {
+        margin-top: rem(32);
+      }
+    }
+
+    &--image {
+      @include flex(column, nowrap, center, center);
+
+      grid-area: images;
+      gap: rem(16);
+
+      .c-image {
+        height: clamp-calc(250px, 376px);
+
+        width: 100%;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .btn {
+      &-title__item {
+        text-transform: initial;
+        font-weight: 400;
+      }
+    }
+  }
+}

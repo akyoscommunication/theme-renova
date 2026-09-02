@@ -1,0 +1,21 @@
+body {
+  @extend %fs-16;
+
+  overflow-x: hidden;
+  max-width: 100vw;
+  color: color(text-background_body);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body a:where(:not(.wp-element-button)) {
+  text-decoration: none;
+}
+
+h2, h3, h4, h5, h6, p {
+  transition: mask-size 3s $cubic-transition, color 0.3s $cubic-transition !important;
+}
+

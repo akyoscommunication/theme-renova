@@ -1,0 +1,16 @@
+{
+  "hero": "HeroAccess",
+  "services": "ServicesAccess",
+  "text_image": "TextImageAccess",
+  "text_image_inline": "TextImageInlineAccess",
+  "gallery": "GalleryAccess",
+  "numbers": "NumbersAccess",
+  "last-news": "LastNewsAccess",
+  "banner": "BannerAccess",
+  "team": "TeamAccess",
+  "title": "TitleOnlyAccess",
+  "form": "FormAccess",
+  "content": "ContentOnlyAccess",
+  "faq": "FaqAccess",
+  "reviews": "ReviewsAccess"
+}

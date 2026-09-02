@@ -1,0 +1,143 @@
+@import "sub-footer";
+@import "copy-footer";
+
+.footer {
+  background-color: color(primary);
+  color: color(text-primary);
+  padding: rem(108) 0;
+
+  @include lessThan($mobile) {
+    padding: rem(60) 0;
+  }
+
+  &-columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+    grid-template-areas: "logo blank menu informations horaires";
+    grid-gap: rem(20);
+
+    @include lessThan($mobile) {
+      grid-template-columns: 6fr 6fr;
+      grid-template-areas:
+                "logo menu"
+                "informations horaires";
+      grid-gap: rem(40);
+      grid-row-gap: rem(70);
+    }
+
+    @include lessThan($mobileXs) {
+      @include flex(column, nowrap, center, center);
+      text-align: center;
+      grid-row-gap: rem(45);
+    }
+
+    &-item {
+      @include flex(column, nowrap, start, start);
+
+      @include lessThan($mobile) {
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      p {
+        margin-block: 0;
+      }
+
+      gap: rem(24);
+
+      .c-image {
+        max-width: rem(90);
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .c-title {
+        @extend %fs-20;
+
+        text-transform: uppercase;
+        margin: 0;
+        font-family: $font-family-title;
+        font-weight: 400;
+      }
+
+
+      .menu {
+        @include undoListStyles;
+        @include flex(column, nowrap, start, start);
+
+        gap: rem(24);
+
+        @include lessThan($mobile) {
+          align-items: center;
+        }
+      }
+
+      a {
+        background-position: 100% 100%;
+        background-size: 0 rem(2);
+        background-image: linear-gradient(color(text-primary), color(text-primary));
+        background-repeat: no-repeat;
+        transition: background-size 0.3s $cubic-transition;
+
+        &:hover {
+          background-position: 0 100%;
+          background-size: 100% rem(2);
+        }
+      }
+
+      .c-socials {
+        gap: rem(14);
+
+        li {
+          .btn {
+            width: rem(24);
+            height: rem(24);
+            background: color(text-primary);
+            color: color(primary);
+            border-radius: 50%;
+          }
+        }
+      }
+
+
+      &:nth-child(1) {
+        grid-area: logo;
+      }
+
+      &:nth-child(2) {
+        grid-area: menu;
+      }
+
+      &:nth-child(3) {
+        grid-area: informations;
+      }
+
+      &:nth-child(4) {
+        grid-area: horaires;
+      }
+
+      @include lessThan($mobile) {
+        &:nth-child(1) {
+
+        }
+
+        &:nth-child(2) {
+        }
+
+        &:nth-child(3) {
+
+        }
+
+        &:nth-child(4) {
+
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,48 @@
+%link {
+  @include flex(row, nowrap, space-between, center);
+  gap: 15px;
+}
+
+%fullLink {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+%inputFlat {
+  border: 0;
+  background-color: transparent;
+  font-family: $font-family;
+  &::placeholder {
+    font-weight: bold;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+%imageOverlay {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: $default-transition;
+}
+
+%rounded {
+  border-radius: rem(12);
+}
+
+
+%listCustomBullet {
+  list-style-image: url("/app/themes/akyos-sage/resources/assets/icons/puce.svg");
+  li {
+    padding-left: 3px;
+  }
+}

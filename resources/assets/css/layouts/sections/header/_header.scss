@@ -1,0 +1,182 @@
+@import "social";
+
+$dropdown-icon: $assets-path + "/icons/dropdown.svg";
+
+.header-wrap {
+  grid-area: header;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: color(background_body);
+  transition: background 0.3s $cubic-transition;
+  color: color(text-background_body);
+
+
+  @include lessThan($tablet) {
+    padding: rem(15) 0;
+  }
+
+  &:has(.sub-menu.open) {
+    .menu-item:has(.sub-menu) {
+      &::before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:has(.is-active) {
+    .header {
+      &-brand {
+        position: relative;
+        z-index: 999;
+
+        .c-image {
+          img {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    @include flex(row, nowrap, space-between, center);
+
+    &-brand {
+      .c-image {
+        max-width: rem(90);
+
+        img {
+          transition: filter 0.3s $cubic-transition;
+        }
+      }
+    }
+
+    &-button {
+      @include lessThan($tablet) {
+        display: none;
+      }
+    }
+
+    &-nav {
+      margin-left: auto;
+
+      &__nav {
+        opacity: 0;
+        @include lessThan($tablet) {
+          display: none;
+        }
+
+        .menu {
+          @include flex(row, nowrap, flex-end, center);
+          @include undoListStyles;
+
+          gap: rem(61);
+
+          > li {
+            padding: rem(30) 0;
+
+            &:not(&:has(.sub-menu)) {
+              a {
+                background-position: 100% 100%;
+                background-size: 0 rem(2);
+                background-image: linear-gradient(color(text-background_body), color(text-background_body));
+                background-repeat: no-repeat;
+                transition: background-size 0.3s $cubic-transition;
+
+                &:hover {
+                  background-position: 0 100%;
+                  background-size: 100% rem(2);
+                }
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                font-weight: 700;
+                background-position: 0 100%;
+                background-size: 100% rem(2);
+              }
+            }
+          }
+
+          li {
+            a {
+              @extend %fs-16;
+
+              font-weight: 400;
+              white-space: nowrap;
+            }
+
+            &:has(.sub-menu) {
+              > a {
+                @include withIcon($dropdown-icon, 'right');
+                cursor: default;
+              }
+            }
+          }
+
+          &#menu-menu-principal {
+            .sub-menu {
+              @include undoListStyles;
+              @include flex(row, nowrap, center, center);
+
+              gap: rem(48);
+
+              background-color: color(secondary);
+              position: absolute;
+              max-width: calc($container - 30px);
+              margin: auto;
+              opacity: 0;
+              height: 0;
+              padding-block: rem(17);
+              top: 100%;
+              left: 0;
+              right: 0;
+              transition-timing-function: $cubic-transition;
+              transition-delay: 0.1s;
+              transition-duration: 0.2s;
+
+              &:before, &:after {
+                content: "";
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                background: color(secondary);
+              }
+
+              &:before {
+                left: -100%;
+              }
+
+              &:after {
+                right: -100%;
+              }
+
+              li {
+                a {
+                  font-family: $font-family;
+                  font-weight: 400;
+                  color: color(text-secondary);
+                  display: inline-block;
+                  padding: rem(8) 0;
+                  transition: $default-transition;
+
+                  &:before {
+                    content: none;
+
+                  }
+
+                  &:hover {
+                    text-shadow: 0 0 1px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

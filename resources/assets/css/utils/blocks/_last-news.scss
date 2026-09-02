@@ -1,0 +1,31 @@
+.s-last-news {
+  > .container {
+    > .c-title {
+      width: fit-content;
+    }
+  }
+
+  &__text {
+    margin-top: rem(8);
+  }
+
+  &-posts {
+    @include grid(2, 20);
+    @include gridMd(2, 20);
+    @include gridSm(2, 20);
+    @include gridXs(1, 20);
+
+    margin-top: rem(44);
+    grid-gap: rem(20);
+  }
+
+  &-btn {
+    margin-inline: auto;
+    margin-top: rem(64);
+
+    .btn-title__item {
+      text-transform: initial;
+      font-weight: 400;
+    }
+  }
+}

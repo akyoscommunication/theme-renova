@@ -1,0 +1,4 @@
+.c-socials {
+  @include undoListStyles;
+  @include flex(row, nowrap, center, center);
+}

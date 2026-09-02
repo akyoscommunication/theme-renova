@@ -1,0 +1,137 @@
+#burger {
+  display: none;
+  position: relative;
+  height: 50px;
+  z-index: 9;
+  padding: rem(20);
+
+  @include lessThan($tablet) {
+    @include flex(row, nowrap, flex-end, center);
+  }
+
+  span {
+    @include burger(30px, 2px, 7px, var(--aky-color-primary));
+  }
+}
+
+.header-nav__mobile {
+
+  &.is-active {
+    .mobile-menu {
+      mask-size: 100% 300%;
+      pointer-events: all;
+    }
+
+    #burger {
+      span {
+        @include burger-to-cross(#fff);
+      }
+    }
+  }
+
+  .mobile-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: color(primary);
+    color: color(light);
+    padding: rem(150) 0 rem(131) rem(61);
+
+    mask-image: linear-gradient(-180deg, #fff 33.33%, transparent 66.66%);
+    mask-size: 0 300%;
+    mask-position: 100% 0;
+    mask-repeat: no-repeat;
+    transition-duration: .9s;
+    transition-timing-function: $cubic-transition;
+    transition-property: mask-size;
+    pointer-events: none;
+
+    .c-socials {
+      padding-top: rem(60);
+    }
+  }
+
+  .menu {
+    @include undoListStyles;
+    @include flex(column, nowrap, flex-start, start);
+
+    gap: rem(53);
+
+    li {
+      &.current-menu-item {
+        a {
+          font-weight: 400;
+        }
+      }
+
+      a {
+        font-family: $font-family-title;
+        font-size: rem(33);
+        color: color(light);
+        font-weight: 300;
+
+      }
+
+      &:has(.sub-menu) {
+        position: relative;
+        overflow: hidden;
+
+        > a {
+          &:after {
+            content: url($dropdown-icon);
+            margin-left: rem(10);
+            filter: brightness(0) invert(1);
+          }
+        }
+
+        .sub-menu {
+          @include undoListStyles;
+
+          height: 0;
+
+          li {
+            a {
+              font-size: rem(17);
+              display: inline-block;
+              padding: rem(10) rem(20) rem(5) rem(20);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .c-socials {
+    @include flex(row, nowrap, flex-end, center);
+    gap: rem(20);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    justify-content: center;
+
+    .btn {
+      color: color(background_body);
+
+      &--social {
+        width: rem(36);
+        height: rem(36);
+
+        svg {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+}
+
+.scrolled {
+  #burger {
+    span {
+      background-color: color(primary);
+    }
+  }
+}

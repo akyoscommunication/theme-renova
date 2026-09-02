@@ -1,0 +1,69 @@
+.swiper {
+  .swiper-buttons {
+    @include flex(row, nowrap, end, center);
+
+    gap: rem(45);
+    margin-top: rem(48);
+
+    &:has(.swiper-button-lock) {
+      margin-top: 0;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+      position: initial;
+      width: initial;
+      height: initial;
+      margin-top: initial;
+
+      svg {
+        color: color(secondary);
+
+        path {
+          stroke: currentColor;
+        }
+      }
+
+      &:after {
+        content: none;
+      }
+    }
+
+  }
+}
+
+.bg-color-primary {
+  .swiper {
+    svg {
+      color: color(text-primary) !important;
+
+      path {
+        stroke: currentColor !important;
+      }
+    }
+  }
+}
+
+.bg-color-secondary {
+  .swiper {
+    svg {
+      color: color(text-secondary) !important;
+
+      path {
+        stroke: currentColor !important;
+      }
+    }
+  }
+}
+
+.slider--content {
+  .swiper-buttons {
+    margin-top: rem(5);
+  }
+}
+
+.slider--content--2 {
+  .swiper-buttons {
+    margin-top: rem(25);
+    justify-content: end;
+  }
+}

@@ -1,0 +1,49 @@
+.s-numbers {
+  &__text {
+    @extend %fs-20;
+
+    font-family: $font-family-title;
+    margin-top: rem(24);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  > .container {
+    > .c-title {
+      @extend %fs-33;
+
+      width: fit-content;
+      margin: auto;
+    }
+  }
+
+  &-header {
+    @include flex(row, wrap, space-between, start);
+
+    gap: rem(52);
+  }
+
+  &-list {
+    @include flex(row, wrap, center, center);
+
+    margin-top: rem(82);
+    gap: rem(22);
+
+    .c-number {
+      flex: 0 0 calc(33.333% - 20px);
+
+      @include lessThan($tablet) {
+        flex: 0 0 calc(50% - 20px);
+      }
+      @include lessThan($mobile) {
+        flex: 0 0 calc(100% - 20px);
+      }
+    }
+
+    @include lessThan($mobile) {
+      flex-direction: column;
+    }
+  }
+}

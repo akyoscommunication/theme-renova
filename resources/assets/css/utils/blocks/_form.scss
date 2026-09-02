@@ -1,0 +1,57 @@
+.s-form {
+  @include lessThan(tablet) {
+    padding-top: rem(120) !important;
+  }
+
+
+  > .container {
+    display: grid;
+    grid-template-columns: 5fr 1fr 6fr;
+    grid-template-areas: "left blank right";
+    grid-gap: rem(20);
+
+    @include lessThan(laptop) {
+      @include flex(column, nowrap, center, stretch);
+    }
+  }
+
+  &-wrapper {
+    &:nth-child(1) {
+      grid-area: left;
+
+      > .c-title {
+        margin-bottom: rem(40);
+        line-height: 1;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-area: right;
+
+      opacity: 0;
+    }
+  }
+
+  &-infos {
+    @include flex(row, wrap, space-between, start);
+
+    column-gap: rem(36);
+    row-gap: rem(16);
+
+    @include lessThan(mobileonly) {
+      gap: rem(20);
+      justify-content: center;
+      text-align: center;
+    }
+
+    a:not(.btn) {
+      @include flex(row, nowrap, start, center);
+
+      padding-bottom: rem(16);
+      gap: rem(8);
+    }
+  }
+
+  .c-socials {
+  }
+}

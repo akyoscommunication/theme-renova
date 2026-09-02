@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+	--akyos-primary: #0052ff;
+	--akyos-primary-hover: #0047db;
+	--akyos-slate-50: #f8fafc;
+	--akyos-slate-200: #e2e8f0;
+	--akyos-radius: 0.75rem;
+	--akyos-radius-sm: 0.5rem;
+}
+
+/* ─── Connexion ─── */
+
+body.login {
+	background: var(--akyos-slate-50);
+	font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+body.login #login {
+	width: min(100%, 22rem);
+	padding-top: 6vh;
+}
+
+body.login #login h1 a {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 56px;
+	margin: 0 auto 1.5rem;
+}
+
+body.login #login form {
+	border: 1px solid var(--akyos-slate-200);
+	border-radius: var(--akyos-radius);
+	box-shadow: 0 1px 3px rgb(15 23 42 / 0.06);
+	padding: 1.5rem;
+}
+
+body.login #login form .input,
+body.login #login input[type="text"],
+body.login #login input[type="password"] {
+	border-color: var(--akyos-slate-200);
+	border-radius: var(--akyos-radius-sm);
+}
+
+body.login #login form .input:focus,
+body.login #login input[type="text"]:focus,
+body.login #login input[type="password"]:focus {
+	border-color: var(--akyos-primary);
+	box-shadow: 0 0 0 1px var(--akyos-primary);
+}
+
+body.login .button-primary {
+	background: var(--akyos-primary);
+	border-color: var(--akyos-primary);
+	border-radius: var(--akyos-radius-sm);
+	text-shadow: none;
+	box-shadow: none;
+}
+
+body.login .button-primary:hover,
+body.login .button-primary:focus {
+	background: var(--akyos-primary-hover);
+	border-color: var(--akyos-primary-hover);
+}
+
+body.login #nav a,
+body.login #backtoblog a {
+	color: var(--akyos-primary);
+}
+
+body.login #nav a:hover,
+body.login #backtoblog a:hover {
+	color: var(--akyos-primary-hover);
+}
+
+/* ─── Admin : touches légères uniquement ─── */
+
+body.wp-admin .button-primary,
+body.wp-admin .wp-core-ui .button-primary {
+	background: var(--akyos-primary);
+	border-color: var(--akyos-primary);
+}
+
+body.wp-admin .button-primary:hover,
+body.wp-admin .button-primary:focus,
+body.wp-admin .wp-core-ui .button-primary:hover,
+body.wp-admin .wp-core-ui .button-primary:focus {
+	background: var(--akyos-primary-hover);
+	border-color: var(--akyos-primary-hover);
+}
+
+body.wp-admin #wpadminbar {
+	box-shadow: inset 0 -2px 0 var(--akyos-primary);
+}
+
+body.wp-admin #wpfooter a {
+	color: var(--akyos-primary);
+}
+
+body.wp-admin #wpfooter a:hover {
+	color: var(--akyos-primary-hover);
+}

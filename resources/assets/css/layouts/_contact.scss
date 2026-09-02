@@ -1,0 +1,79 @@
+.politique-de-confidentialite, .mentions-legales, .cookies {
+  .header-wrap {
+    background-color: color(light);
+
+    .header {
+      &-brand {
+        .c-image {
+          img {
+            filter: brightness(0);
+          }
+        }
+      }
+
+      &:has(.is-active) {
+        .header-brand {
+          .c-image {
+            img {
+              filter: brightness(0)invert(1);
+            }
+          }
+        }
+      }
+
+      &-nav {
+        &__mobile {
+          #burger {
+            span {
+              @include burger(30px, 2px, 7px, var(--aky-color-dark));
+            }
+          }
+          &.is-active {
+            #burger {
+              span {
+                @include burger-to-cross(#fff);
+              }
+            }
+          }
+        }
+        &__nav {
+          .menu {
+            li {
+              &:not(&:has(.sub-menu)) {
+                a {
+                  background-image: linear-gradient(color(dark), color(dark));
+                }
+              }
+              a {
+                color: color(dark);
+              }
+            }
+            &#menu-menu-principal {
+              li:has(.sub-menu) {
+                &::before {
+                  filter: brightness(0);
+                }
+                .sub-menu {
+                  li {
+                    a {
+                      color: color(light);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    padding-top: rem(112);
+  }
+
+  .sub-footer {
+    display: none;
+  }
+
+}

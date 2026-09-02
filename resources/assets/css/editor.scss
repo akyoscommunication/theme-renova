@@ -1,0 +1,188 @@
+@import "common/variables";
+@import "common/mixins";
+@import "common/colors";
+
+.acf-block-component {
+  box-shadow: $default-box-shadow;
+  background-color: #fff;
+  border-radius: 8px !important;
+}
+
+.wp-block-post-title {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.wp-block {
+
+  &[style*="padding-top"], &[style*="padding-bottom"] {
+    background-image: linear-gradient(40deg, #efeded 44.44%, #e0e0e0 44.44%, #e0e0e0 50%, #efeded 50%, #efeded 94.44%, #e0e0e0 94.44%, #e0e0e0 100%);
+    background-size: 42.00px 35.25px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 60px !important;
+  }
+}
+
+.acf-block-body .acf-block-fields {
+  border-radius: 8px !important;
+  border: 1px solid color(dark, 0.2) !important;
+}
+
+.acf-field .acf-label label {
+  font-size: 17px !important;
+  padding: 10px 0 !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.acf-field .acf-label {
+}
+
+.acf-fields > .acf-tab-wrap .acf-tab-group li a,
+.editor-styles-wrapper .wp-elements-5 a:where(:not(.wp-element-button)) {
+  color: color(dark) !important;
+}
+
+.acf-fields > .acf-field {
+  border-top-color: #000 !important;
+  background-color: color(dark, 0.02);
+}
+
+.wds-seo-analysis-container {
+  display: none !important;
+}
+
+.acf-field p.description {
+  padding: 20px 20px 20px 35px;
+  border: 1px solid color(dark, 0.1);
+  background-color: #f6f6f6;
+  font-style: italic;
+  position: relative;
+
+  &::before {
+    @include verticalCenter();
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: block;
+    left: -12px;
+    background-image: url("/app/themes/sage/resources/assets/icons/info.svg");
+    background-size: contain;
+    background-color: light;
+    border-radius: 50%;
+  }
+}
+
+.editor-styles-wrapper {
+  padding: 60px !important;
+  background-color: #efeded;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block {
+  position: relative;
+
+  &:before {
+    content: attr(data-title);
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    z-index: 9;
+    opacity: 1;
+    padding: 10px 20px;
+    border: 1px solid color(dark, 0.1);
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: $default-box-shadow;
+    color: color(text-color);
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #007cba;
+    border-radius: 8px;
+    font-family: $font-family !important;
+    @include horizontalCenter();
+  }
+}
+
+tr.acf-row {
+  &:nth-child(even) {
+    > td, .acf-fields.-left > .acf-field:before {
+      background-color: #e8ebef !important;
+    }
+  }
+}
+
+.acf-fields > .acf-field {
+  border-top-color: #000 !important;
+  background-color: color(dark, 0.02);
+}
+
+.wds-seo-analysis-container {
+  display: none !important;
+}
+
+.acf-field p.description {
+  padding: 20px 20px 20px 35px;
+  border: 1px solid color(dark, 0.1);
+  background-color: #f6f6f6;
+  font-style: italic;
+  position: relative;
+
+  &::before {
+    @include verticalCenter();
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: block;
+    left: -12px;
+    background-image: url("/app/themes/sage/resources/assets/icons/info.svg");
+    background-size: contain;
+    background-color: light;
+    border-radius: 50%;
+  }
+}
+
+.editor-styles-wrapper {
+  padding: 70px !important;
+  background-color: #efeded;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block {
+  position: relative;
+
+  &:before {
+    content: attr(data-title);
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    z-index: 9;
+    opacity: 1;
+    padding: 10px 20px;
+    border: 1px solid color(dark, 0.1);
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: $default-box-shadow;
+    color: color(text-color);
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #007cba;
+    border-radius: 8px;
+    @include horizontalCenter();
+  }
+}
+
+.acf-th > label {
+  opacity: 0.7 !important;
+}
+
+#tabs-0-edit-post\/document-view > div:nth-child(3),
+#tabs-0-edit-post\/document-view > div.components-flex.components-h-stack.components-v-stack.editor-post-panel__section.editor-post-summary.css-1i2unhf.e19lxcc00 > div > div:nth-child(5) > div.components-flex.components-h-stack.components-v-stack.css-1dnujmn.e19lxcc00 > div:nth-child(5),
+#tabs-0-edit-post\/document-view > div.components-flex.components-h-stack.components-v-stack.editor-post-panel__section.editor-post-summary.css-1i2unhf.e19lxcc00 > div > div:nth-child(5) > div.components-flex.components-h-stack.components-v-stack.css-1dnujmn.e19lxcc00 > div:nth-child(4)
+{
+  display: none;
+}
+
+
