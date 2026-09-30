@@ -10,9 +10,12 @@ export class Stagger {
   stagger() {
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.set("[animation-stagger]", {y: 60, autoAlpha: 0})
+    const targets = gsap.utils.toArray("[animation-stagger]").filter((el) => {
+      return !el.hasAttribute("slider") && !el.closest("[slider]") && !el.querySelector("[slider]")
+    })
+    gsap.set(targets, {y: 60, autoAlpha: 0})
 
-    ScrollTrigger.batch("[animation-stagger]", {
+    ScrollTrigger.batch(targets, {
       onEnter: elements => {
         gsap.to(elements, {
           autoAlpha: 1,
